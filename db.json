@@ -1,0 +1,691 @@
+{
+  "users": [
+    {
+      "id": "u-admin",
+      "email": "admin@shop.com",
+      "password": "$2b$10$YDriv0wmo.OfZytOJPEzyOt3KzSjCPMtBTkNj96fsAcXJh4RGE7ge",
+      "role": "admin",
+      "name": "Supreme Admin",
+      "phone": "+8801711122334",
+      "createdAt": "2026-07-13T08:11:59.597Z"
+    },
+    {
+      "id": "u-customer",
+      "email": "customer@shop.com",
+      "password": "$2b$10$YDriv0wmo.OfZytOJPEzyONxNHoiI3/F/.1uTtacM8/MmHw1sVcOq",
+      "role": "customer",
+      "name": "Regular Customer",
+      "phone": "+8801811122334",
+      "addresses": [
+        {
+          "fullName": "Regular Customer",
+          "phone": "+8801811122334",
+          "streetAddress": "House 42, Road 11, Banani",
+          "city": "Dhaka",
+          "state": "Dhaka Division",
+          "zipCode": "1213",
+          "country": "Bangladesh"
+        }
+      ],
+      "createdAt": "2026-07-13T08:11:59.597Z"
+    },
+    {
+      "id": "u-staff",
+      "email": "staff@shop.com",
+      "password": "$2b$10$YDriv0wmo.OfZytOJPEzyONREgwiVZ22s2dbLa5mj6Wm/fr5aL0Gi",
+      "role": "staff",
+      "name": "Store Moderator",
+      "phone": "+8801911122334",
+      "createdAt": "2026-07-13T08:11:59.597Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "p_chatgpt",
+      "name": "ChatGPT Plus Premium Subscription (চ্যাটজিপিটি প্লাস)",
+      "description": "Get instant access to GPT-4o, GPT-4, advanced data analysis, file uploads, and custom GPT builders. Super high-speed responses, 1-month shared or private subscription with a full replacement warranty.",
+      "slug": "chatgpt-plus-premium",
+      "category": "ai-chat",
+      "subcategory": "chat-assistants",
+      "images": [
+        "https://images.unsplash.com/photo-1675557009875-436f09780264?q=80&w=800&auto=format&fit=crop"
+      ],
+      "variants": [
+        {
+          "sku": "CHATGPT-SHARED",
+          "size": "Shared Profile (১ মাস)",
+          "color": "Default",
+          "stock": 15,
+          "price": 350
+        },
+        {
+          "sku": "CHATGPT-PRIVATE",
+          "size": "Private Account (১ মাস)",
+          "color": "Default",
+          "stock": 10,
+          "price": 2350
+        }
+      ],
+      "originalPrice": 2400,
+      "salePrice": 2350,
+      "saleStartDate": "2026-07-01",
+      "saleEndDate": "2026-08-31",
+      "rating": 4.9,
+      "reviews": [
+        {
+          "id": "rev_chat1",
+          "productId": "p_chatgpt",
+          "userName": "Asif Rahman",
+          "userEmail": "asif@gmail.com",
+          "rating": 5,
+          "comment": "Instant activation! Absolutely amazing support.",
+          "isApproved": true,
+          "date": "2026-07-11"
+        }
+      ],
+      "seo": {
+        "metaTitle": "ChatGPT Plus Premium Subscription - Aura AI",
+        "metaDescription": "Access ChatGPT Plus GPT-4o and advanced analysis features at lowest cost in Bangladesh.",
+        "slug": "chatgpt-plus-premium"
+      },
+      "stock": 25,
+      "lowStockThreshold": 5,
+      "isFeatured": true,
+      "isNewArrival": true,
+      "isBestSeller": true,
+      "flashSaleEnabled": true,
+      "flashSalePrice": 330,
+      "flashSaleEnd": "2026-07-25T23:59:59Z",
+      "createdAt": "2026-07-11T10:00:00.000Z"
+    },
+    {
+      "id": "p_gemini",
+      "name": "Google Gemini Advanced Pro (জেমিনি অ্যাডভান্সড)",
+      "description": "Access Gemini 1.5 Pro and Gemini Ultra models. Features deep reasoning, active coding, and integration into Google Docs, Gmail, and Google Drive workspace. Fully active for 1 month.",
+      "slug": "gemini-advanced-subscription",
+      "category": "ai-chat",
+      "subcategory": "chat-assistants",
+      "images": [
+        "https://images.unsplash.com/photo-1707149377432-841f3d8381ee?q=80&w=800&auto=format&fit=crop"
+      ],
+      "variants": [
+        {
+          "sku": "GEMINI-SHARED",
+          "size": "Shared Profile (১ মাস)",
+          "color": "Default",
+          "stock": 20,
+          "price": 390
+        },
+        {
+          "sku": "GEMINI-PRIVATE",
+          "size": "Private Gmail Upgrade",
+          "color": "Default",
+          "stock": 8,
+          "price": 2450
+        }
+      ],
+      "originalPrice": 2500,
+      "salePrice": 2450,
+      "rating": 4.8,
+      "reviews": [],
+      "seo": {
+        "metaTitle": "Google Gemini Advanced Upgrade - Aura AI",
+        "metaDescription": "Activate Gemini Advanced Premium with Ultra 1.0 reasoning inside Google Workspace.",
+        "slug": "gemini-advanced-subscription"
+      },
+      "stock": 28,
+      "lowStockThreshold": 5,
+      "isFeatured": true,
+      "isNewArrival": true,
+      "isBestSeller": true,
+      "createdAt": "2026-07-11T10:10:00.000Z"
+    },
+    {
+      "id": "p_grok",
+      "name": "xAI Grok Premium Subscription (গ্রক এআই)",
+      "description": "Direct Grok AI integration on X (Twitter). Features witty responses, direct access to real-time search datasets on X, and fast image generation. Activated for 1 Month.",
+      "slug": "grok-ai-premium-subscription",
+      "category": "ai-chat",
+      "subcategory": "chat-assistants",
+      "images": [
+        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop"
+      ],
+      "variants": [
+        {
+          "sku": "GROK-PREMIUM",
+          "size": "1 Month Premium Access",
+          "color": "Default",
+          "stock": 12,
+          "price": 1200
+        }
+      ],
+      "originalPrice": 1400,
+      "salePrice": 1200,
+      "rating": 4.7,
+      "reviews": [],
+      "seo": {
+        "metaTitle": "xAI Grok Premium subscription - Aura AI Store",
+        "metaDescription": "Grok premium AI chat tool on Twitter with real-time news data integration.",
+        "slug": "grok-ai-premium-subscription"
+      },
+      "stock": 12,
+      "lowStockThreshold": 3,
+      "isFeatured": true,
+      "isNewArrival": true,
+      "isBestSeller": false,
+      "createdAt": "2026-07-11T10:20:00.000Z"
+    },
+    {
+      "id": "p_midjourney",
+      "name": "Midjourney AI Image Generator (মিডজার্নি এআই)",
+      "description": "Unleash your creativity and generate hyper-realistic concept art, high-fidelity graphics, and product mockups. Fast hours allocation on shared or private accounts.",
+      "slug": "midjourney-ai-subscription",
+      "category": "ai-art",
+      "subcategory": "image-generators",
+      "images": [
+        "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=800&auto=format&fit=crop"
+      ],
+      "variants": [
+        {
+          "sku": "MIDJOURNEY-SHARED",
+          "size": "Shared Profile (১ মাস)",
+          "color": "Default",
+          "stock": 15,
+          "price": 490
+        },
+        {
+          "sku": "MIDJOURNEY-STANDARD",
+          "size": "Standard Private Account",
+          "color": "Default",
+          "stock": 5,
+          "price": 3450
+        }
+      ],
+      "originalPrice": 3600,
+      "salePrice": 3450,
+      "rating": 4.9,
+      "reviews": [],
+      "seo": {
+        "metaTitle": "Midjourney AI Image Subscription - Aura AI Store",
+        "metaDescription": "Design professional graphics and high fidelity photos with Midjourney v6.",
+        "slug": "midjourney-ai-subscription"
+      },
+      "stock": 20,
+      "lowStockThreshold": 4,
+      "isFeatured": true,
+      "isNewArrival": false,
+      "isBestSeller": true,
+      "createdAt": "2026-07-11T10:30:00.000Z"
+    },
+    {
+      "id": "p_cursor",
+      "name": "Cursor AI Pro Subscription (কারসর এআই)",
+      "description": "The premier AI-first code editor. Seamless pair programming, multi-file codebases understanding, auto-completions, and unlimited Claude 3.5 Sonnet / GPT-4o usage. Full 1-month warranty.",
+      "slug": "cursor-ai-pro-subscription",
+      "category": "ai-dev",
+      "subcategory": "code-assistants",
+      "images": [
+        "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop"
+      ],
+      "variants": [
+        {
+          "sku": "CURSOR-PRO-SHARED",
+          "size": "Shared Profile (১ মাস)",
+          "color": "Default",
+          "stock": 8,
+          "price": 450
+        },
+        {
+          "sku": "CURSOR-PRO-PRIVATE",
+          "size": "Private Account (১ মাস)",
+          "color": "Default",
+          "stock": 4,
+          "price": 2350
+        }
+      ],
+      "originalPrice": 2400,
+      "salePrice": 2350,
+      "rating": 5,
+      "reviews": [],
+      "seo": {
+        "metaTitle": "Cursor AI Pro Editor subscription - Aura AI Store",
+        "metaDescription": "Boost developer speed with Cursor Pro editor integration on Windows/Mac.",
+        "slug": "cursor-ai-pro-subscription"
+      },
+      "stock": 12,
+      "lowStockThreshold": 3,
+      "isFeatured": true,
+      "isNewArrival": true,
+      "isBestSeller": true,
+      "createdAt": "2026-07-11T10:40:00.000Z"
+    },
+    {
+      "id": "p_copilot",
+      "name": "GitHub Copilot Individual (গিটহাব কোপাইলট)",
+      "description": "The world's most popular AI pair programmer directly integrated inside VS Code, JetBrains, Visual Studio, and Neovim. Write cleaner functions, faster tests.",
+      "slug": "github-copilot-subscription",
+      "category": "ai-dev",
+      "subcategory": "code-assistants",
+      "images": [
+        "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=800&auto=format&fit=crop"
+      ],
+      "variants": [
+        {
+          "sku": "COPILOT-1M",
+          "size": "1 Month Full Access",
+          "color": "Default",
+          "stock": 25,
+          "price": 350
+        },
+        {
+          "sku": "COPILOT-1Y",
+          "size": "1 Year Activation Upgrade",
+          "color": "Default",
+          "stock": 10,
+          "price": 2200
+        }
+      ],
+      "originalPrice": 2400,
+      "salePrice": 2200,
+      "rating": 4.8,
+      "reviews": [],
+      "seo": {
+        "metaTitle": "GitHub Copilot Individual Subscription - Aura AI Store",
+        "metaDescription": "Code faster with GitHub Copilot AI autocomplete support for any coding language.",
+        "slug": "github-copilot-subscription"
+      },
+      "stock": 35,
+      "lowStockThreshold": 5,
+      "isFeatured": true,
+      "isNewArrival": false,
+      "isBestSeller": true,
+      "createdAt": "2026-07-11T10:50:00.000Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat_ai_chat",
+      "name": "AI CHAT & WRITING (চ্যাট ও রাইটিং)",
+      "slug": "ai-chat",
+      "icon": "Bot",
+      "image": "https://images.unsplash.com/photo-1675557009875-436f09780264?q=80&w=600&auto=format&fit=crop",
+      "isFeatured": true,
+      "order": 1
+    },
+    {
+      "id": "cat_ai_art",
+      "name": "AI ART & DESIGN (আর্ট ও ডিজাইন)",
+      "slug": "ai-art",
+      "icon": "Wand2",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop",
+      "isFeatured": true,
+      "order": 2
+    },
+    {
+      "id": "cat_ai_dev",
+      "name": "AI DEVELOPMENT (কোডিং ও ডেভ)",
+      "slug": "ai-dev",
+      "icon": "Code",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop",
+      "isFeatured": true,
+      "order": 3
+    },
+    {
+      "id": "cat_ai_video",
+      "name": "AI VIDEO & VOICE (ভিডিও ও ভয়েস)",
+      "slug": "ai-video-voice",
+      "icon": "Video",
+      "image": "https://images.unsplash.com/photo-1536240478700-b869070f9279?q=80&w=600&auto=format&fit=crop",
+      "isFeatured": true,
+      "order": 4
+    }
+  ],
+  "subcategories": [
+    {
+      "id": "sub_chat1",
+      "categoryId": "cat_ai_chat",
+      "name": "Chat Assistants",
+      "slug": "chat-assistants"
+    },
+    {
+      "id": "sub_chat2",
+      "categoryId": "cat_ai_chat",
+      "name": "Writing Tools",
+      "slug": "writing-tools"
+    },
+    {
+      "id": "sub_art1",
+      "categoryId": "cat_ai_art",
+      "name": "Image Generators",
+      "slug": "image-generators"
+    },
+    {
+      "id": "sub_dev1",
+      "categoryId": "cat_ai_dev",
+      "name": "Code Assistants",
+      "slug": "code-assistants"
+    }
+  ],
+  "orders": [
+    {
+      "id": "ord-1001",
+      "customerId": "u-customer",
+      "items": [
+        {
+          "productId": "p_chatgpt",
+          "variantSku": "CHATGPT-SHARED",
+          "quantity": 1,
+          "price": 350,
+          "name": "ChatGPT Plus Premium Subscription (চ্যাটজিপিটি প্লাস)",
+          "image": "https://images.unsplash.com/photo-1675557009875-436f09780264?q=80&w=800&auto=format&fit=crop"
+        }
+      ],
+      "totalAmount": 350,
+      "shippingCost": 0,
+      "discountAmount": 10,
+      "finalAmount": 340,
+      "shippingAddress": {
+        "fullName": "Regular Customer",
+        "phone": "+8801811122334",
+        "streetAddress": "House 42, Road 11, Banani",
+        "city": "Dhaka",
+        "state": "Dhaka Division",
+        "zipCode": "1213",
+        "country": "Bangladesh"
+      },
+      "paymentMethod": "bkash",
+      "paymentStatus": "verified",
+      "paymentDetails": {
+        "transactionId": "BKX9023485723",
+        "paymentInstructions": "Paid via direct bKash manual transfer."
+      },
+      "status": "Processing",
+      "orderDate": "2026-07-10T15:20:00.000Z",
+      "trackingTimeline": [
+        {
+          "status": "Pending",
+          "date": "2026-07-10T15:20:00.000Z",
+          "notes": "Order placed by customer."
+        },
+        {
+          "status": "Processing",
+          "date": "2026-07-11T09:00:00.000Z",
+          "notes": "Payment verified, preparing item for packaging."
+        }
+      ]
+    },
+    {
+      "id": "ord-1002",
+      "customerId": "u-customer",
+      "items": [
+        {
+          "productId": "p_cursor",
+          "variantSku": "CURSOR-PRO-SHARED",
+          "quantity": 2,
+          "price": 450,
+          "name": "Cursor AI Pro Subscription (কারসর এআই)",
+          "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop"
+        }
+      ],
+      "totalAmount": 900,
+      "shippingCost": 0,
+      "discountAmount": 0,
+      "finalAmount": 900,
+      "shippingAddress": {
+        "fullName": "Regular Customer",
+        "phone": "+8801811122334",
+        "streetAddress": "Shatabdi Tower, Sector 3",
+        "city": "Chittagong",
+        "state": "Chittagong Division",
+        "zipCode": "4000",
+        "country": "Bangladesh"
+      },
+      "paymentMethod": "cod",
+      "paymentStatus": "pending",
+      "status": "Pending",
+      "orderDate": "2026-07-11T12:00:00.000Z",
+      "trackingTimeline": [
+        {
+          "status": "Pending",
+          "date": "2026-07-11T12:00:00.000Z",
+          "notes": "Order placed with Direct/Email Activation option."
+        }
+      ]
+    }
+  ],
+  "coupons": [
+    {
+      "id": "c1",
+      "code": "AURA10",
+      "type": "percentage",
+      "value": 10,
+      "minPurchase": 50,
+      "expiryDate": "2027-12-31",
+      "usageLimit": 100,
+      "usageCount": 5
+    },
+    {
+      "id": "c2",
+      "code": "FREESHIP",
+      "type": "fixed",
+      "value": 15,
+      "minPurchase": 100,
+      "expiryDate": "2027-12-31",
+      "usageLimit": 50,
+      "usageCount": 2
+    },
+    {
+      "id": "c3",
+      "code": "MEGA50",
+      "type": "fixed",
+      "value": 50,
+      "minPurchase": 300,
+      "expiryDate": "2026-07-31",
+      "usageLimit": 10,
+      "usageCount": 0
+    }
+  ],
+  "sliderSlides": [
+    {
+      "id": "s1",
+      "title": "Premium ChatGPT & Claude Pro",
+      "subtitle": "Access GPT-4o, Claude 3.5 Sonnet, and custom models with absolute lowest cost in Bangladesh.",
+      "image": "https://images.unsplash.com/photo-1675557009875-436f09780264?q=80&w=1600&auto=format&fit=crop",
+      "buttonText": "Shop AI Chat",
+      "buttonLink": "/shop?category=ai-chat",
+      "order": 1
+    },
+    {
+      "id": "s2",
+      "title": "Cursor AI & GitHub Copilot Pro",
+      "subtitle": "Elevate your programming with AI-first pair programming editors on private or shared subscriptions.",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop",
+      "buttonText": "Explore Coding AI",
+      "buttonLink": "/shop?category=ai-dev",
+      "order": 2
+    },
+    {
+      "id": "s3",
+      "title": "Midjourney & Creative Art Engines",
+      "subtitle": "Generate stunning, hyper-realistic graphic assets, conceptual models, and artwork.",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1600&auto=format&fit=crop",
+      "buttonText": "Browse AI Art",
+      "buttonLink": "/shop?category=ai-art",
+      "order": 3
+    }
+  ],
+  "siteSettings": {
+    "siteName": "SS AI Store",
+    "logo": "✨ SS AI Store",
+    "contactEmail": "support@ssai.com",
+    "contactPhone": "+880 1711-000000",
+    "socialLinks": {
+      "facebook": "https://facebook.com",
+      "twitter": "https://twitter.com",
+      "instagram": "https://instagram.com"
+    },
+    "themeColor": {
+      "primary": "#2cdd79",
+      "secondary": "#06b6d4"
+    },
+    "currency": "BDT",
+    "taxRate": 5,
+    "homeSectionsVisibility": {
+      "heroSlider": true,
+      "categories": true,
+      "featured": true,
+      "newArrivals": true,
+      "bestSellers": true,
+      "flashSale": true,
+      "reviews": true,
+      "newsletter": true,
+      "trustBadges": true
+    },
+    "paymentGateways": {
+      "cod": {
+        "id": "cod",
+        "name": "Direct/Email Activation (Instant)",
+        "enabled": true,
+        "apiKeys": {},
+        "instructions": "Receive your subscription details directly in your profile/email instantly.",
+        "order": 1
+      },
+      "stripe": {
+        "id": "stripe",
+        "name": "Stripe (Cards)",
+        "enabled": true,
+        "apiKeys": {
+          "publicKey": "pk_test_placeholder",
+          "secretKey": "sk_test_placeholder"
+        },
+        "instructions": "Pay securely using credit or debit cards via Stripe.",
+        "order": 2
+      },
+      "paypal": {
+        "id": "paypal",
+        "name": "PayPal",
+        "enabled": true,
+        "apiKeys": {
+          "clientId": "paypal_client_placeholder",
+          "clientSecret": "paypal_secret_placeholder"
+        },
+        "instructions": "You will be redirected to PayPal to complete your payment.",
+        "order": 3
+      },
+      "bkash": {
+        "id": "bkash",
+        "name": "bKash (Direct/Manual)",
+        "enabled": true,
+        "apiKeys": {
+          "merchantNumber": "01711000000",
+          "apiUsername": "bkash_user"
+        },
+        "instructions": "Send money to our bKash Merchant account: 01711000000. Enter your Transaction ID below.",
+        "order": 4
+      },
+      "nagad": {
+        "id": "nagad",
+        "name": "Nagad (Manual)",
+        "enabled": true,
+        "apiKeys": {
+          "merchantNumber": "01811000000"
+        },
+        "instructions": "Send money to our Nagad Merchant account: 01811000000. Enter your Transaction ID below.",
+        "order": 5
+      },
+      "rocket": {
+        "id": "rocket",
+        "name": "Rocket (Manual)",
+        "enabled": true,
+        "apiKeys": {
+          "merchantNumber": "01911000000-1"
+        },
+        "instructions": "Send money to our Rocket Merchant account: 01911000000-1. Enter your Transaction ID below.",
+        "order": 6
+      },
+      "sslcommerz": {
+        "id": "sslcommerz",
+        "name": "SSLCommerz",
+        "enabled": true,
+        "apiKeys": {
+          "storeId": "ssl_store_placeholder",
+          "storePassword": "ssl_pass_placeholder"
+        },
+        "instructions": "Pay using bKash, Nagad, Visa, Mastercard, or Bank Transfer via SSLCommerz.",
+        "order": 7
+      },
+      "bank": {
+        "id": "bank",
+        "name": "Bank Transfer (Manual)",
+        "enabled": true,
+        "apiKeys": {
+          "bankName": "Apex City Bank",
+          "accountName": "SS AI Store LLC",
+          "accountNumber": "122-3344-5566-77"
+        },
+        "instructions": "Transfer to Apex City Bank, A/C: 122-3344-5566-77. Upload a screenshot of your transfer receipt.",
+        "order": 8
+      }
+    }
+  },
+  "shippingZones": [
+    {
+      "id": "z1",
+      "name": "Domestic Flat Rate",
+      "cost": 10,
+      "freeShippingThreshold": 150
+    },
+    {
+      "id": "z2",
+      "name": "International Shipping",
+      "cost": 35,
+      "freeShippingThreshold": 500
+    },
+    {
+      "id": "z3",
+      "name": "Dhaka City (Bangladesh)",
+      "cost": 5,
+      "freeShippingThreshold": 80
+    },
+    {
+      "id": "z4",
+      "name": "Outside Dhaka (Bangladesh)",
+      "cost": 8,
+      "freeShippingThreshold": 120
+    }
+  ],
+  "activityLogs": [
+    {
+      "id": "log-1783934022691",
+      "adminId": "u-admin",
+      "adminName": "Supreme Admin",
+      "action": "Settings Modified",
+      "details": "Modified global site configurations and payment setups.",
+      "timestamp": "2026-07-13T09:13:42.691Z"
+    },
+    {
+      "id": "log-1783934020323",
+      "adminId": "u-admin",
+      "adminName": "Supreme Admin",
+      "action": "Settings Modified",
+      "details": "Modified global site configurations and payment setups.",
+      "timestamp": "2026-07-13T09:13:40.323Z"
+    },
+    {
+      "id": "log-1783934019765",
+      "adminId": "u-admin",
+      "adminName": "Supreme Admin",
+      "action": "Settings Modified",
+      "details": "Modified global site configurations and payment setups.",
+      "timestamp": "2026-07-13T09:13:39.765Z"
+    },
+    {
+      "id": "log-1",
+      "adminId": "u-admin",
+      "adminName": "Supreme Admin",
+      "action": "System Seeded",
+      "details": "Initialized e-commerce database tables with mock categories, products, and default site settings.",
+      "timestamp": "2026-07-13T08:11:59.597Z"
+    }
+  ]
+}

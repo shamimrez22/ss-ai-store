@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/* Force all text in the entire website to be uppercase */
+*, *::before, *::after {
+  text-transform: uppercase !important;
+}
+
+input, textarea, select, button, option {
+  text-transform: uppercase !important;
+}
+
+::placeholder {
+  text-transform: uppercase !important;
+}
+
+/* Make the entire website wider (stretching the max-width dynamically to 1500px) */
+.max-w-7xl {
+  max-width: 1500px !important;
+}
+
+/* Reduce gaps in the middle (between columns, grids, sections, flex boxes) */
+.gap-12 {
+  gap: 1.5rem !important; /* compact spacing between home sections */
+}
+.gap-8 {
+  gap: 1.25rem !important;
+}
+.gap-6 {
+  gap: 1rem !important;
+}
+.gap-5 {
+  gap: 0.65rem !important; /* tighter gaps for the product grids to reduce empty spaces */
+}
+.gap-4 {
+  gap: 0.5rem !important;
+}
+.gap-3.5 {
+  gap: 0.45rem !important;
+}
+.gap-3 {
+  gap: 0.4rem !important;
+}
+
+/* Reduce vertical margins/paddings for a tight and clean design flow */
+.mb-12 {
+  margin-bottom: 1.5rem !important;
+}
+.mb-8 {
+  margin-bottom: 1rem !important;
+}
+.mb-6 {
+  margin-bottom: 0.75rem !important;
+}
+.mb-4 {
+  margin-bottom: 0.5rem !important;
+}
+.mt-12 {
+  margin-top: 1.5rem !important;
+}
+.mt-8 {
+  margin-top: 1rem !important;
+}
+.mt-6 {
+  margin-top: 0.75rem !important;
+}
+.py-12 {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+.py-8 {
+  padding-top: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
+}

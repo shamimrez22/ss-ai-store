@@ -1,0 +1,6 @@
+{
+  "name": "E-Commerce Platform with Admin Panel",
+  "description": "A high-performance, full-stack, professional e-commerce storefront and admin dashboard with multi-role authentication, product variants, sliders, analytics, and multiple payment gateways (Stripe, PayPal, bKash, SSLCommerz, Rocket, Nagad).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
