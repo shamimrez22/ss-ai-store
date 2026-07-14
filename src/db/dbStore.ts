@@ -5,10 +5,8 @@ import {
   User, Product, Category, Subcategory, Order, Coupon, 
   SliderSlide, SiteSettings, ShippingZone, AdminActivityLog, Review 
 } from '../types';
-import { initializeApp } from 'firebase/app';
-import { 
-  getFirestore, doc, getDoc, setDoc, getDocs, collection, deleteDoc 
-} from 'firebase/firestore';
+import { initializeApp, getApps, getApp } from 'firebase-admin/app';
+import { getFirestore } from 'firebase-admin/firestore';
 
 const DB_FILE = path.join(process.cwd(), 'db.json');
 
@@ -527,24 +525,24 @@ export class DbStore {
         const configRaw = fs.readFileSync(configPath, 'utf-8');
         const config = JSON.parse(configRaw);
         
-        const app = initializeApp({
-          apiKey: config.apiKey,
-          authDomain: config.authDomain,
-          projectId: config.projectId,
-          storageBucket: config.storageBucket,
-          messagingSenderId: config.messagingSenderId,
-          appId: config.appId
-        });
+        let app;
+        if (getApps().length === 0) {
+          app = initializeApp({
+            projectId: config.projectId
+          });
+        } else {
+          app = getApp();
+        }
         
         this.db = getFirestore(app, config.firestoreDatabaseId || '(default)');
-        console.log('Firebase Client Initialized with Firestore databaseId:', config.firestoreDatabaseId || '(default)');
+        console.log('Firebase Admin Initialized with Firestore databaseId:', config.firestoreDatabaseId || '(default)');
 
         await this.syncFromFirestore();
       } else {
         console.log('No firebase-applet-config.json found, running strictly on local DB cache.');
       }
     } catch (err) {
-      console.error('Failed to initialize Firebase client, using local DB:', err);
+      console.error('Failed to initialize Firebase Admin client, using local DB:', err);
     }
   }
 
@@ -555,9 +553,9 @@ export class DbStore {
       console.log('Synchronizing collections from Cloud Firestore...');
       
       const getCollectionDocs = async (collName: string) => {
-        const querySnapshot = await getDocs(collection(this.db, collName));
+        const snapshot = await this.db.collection(collName).get();
         const list: any[] = [];
-        querySnapshot.forEach((doc) => {
+        snapshot.forEach((doc: any) => {
           list.push(doc.data());
         });
         return list;
@@ -573,9 +571,8 @@ export class DbStore {
       const fbZones = await getCollectionDocs('shippingZones');
       const fbLogs = await getCollectionDocs('activityLogs');
 
-      const settingsDocRef = doc(this.db, 'siteSettings', 'global');
-      const settingsSnap = await getDoc(settingsDocRef);
-      const fbSettings = settingsSnap.exists() ? settingsSnap.data() as SiteSettings : null;
+      const settingsSnap = await this.db.collection('siteSettings').doc('global').get();
+      const fbSettings = settingsSnap.exists ? settingsSnap.data() as SiteSettings : null;
 
       // Seed Firestore if both products and users are empty in Firestore (first boot)
       if (fbUsers.length === 0 && fbProducts.length === 0) {
@@ -610,7 +607,7 @@ export class DbStore {
       const uploadCollection = async (collName: string, items: any[]) => {
         for (const item of items) {
           if (item && item.id) {
-            await setDoc(doc(this.db, collName, item.id), item);
+            await this.db.collection(collName).doc(item.id).set(item);
           }
         }
       };
@@ -626,7 +623,7 @@ export class DbStore {
       await uploadCollection('activityLogs', this.data.activityLogs);
 
       if (this.data.siteSettings) {
-        await setDoc(doc(this.db, 'siteSettings', 'global'), this.data.siteSettings);
+        await this.db.collection('siteSettings').doc('global').set(this.data.siteSettings);
       }
     } catch (err) {
       console.error('Failed to seed datasets to Firestore:', err);
@@ -638,15 +635,15 @@ export class DbStore {
     try {
       for (const item of items) {
         if (item && item.id) {
-          await setDoc(doc(this.db, collName, item.id), item);
+          await this.db.collection(collName).doc(item.id).set(item);
         }
       }
       
-      const querySnapshot = await getDocs(collection(this.db, collName));
+      const querySnapshot = await this.db.collection(collName).get();
       const currentIds = new Set(items.map(i => i.id));
-      querySnapshot.forEach(async (d) => {
+      querySnapshot.forEach(async (d: any) => {
         if (!currentIds.has(d.id)) {
-          await deleteDoc(doc(this.db, collName, d.id));
+          await this.db.collection(collName).doc(d.id).delete();
         }
       });
     } catch (err) {
@@ -657,7 +654,7 @@ export class DbStore {
   private async saveSettingsToFirestore(settings: SiteSettings) {
     if (!this.db) return;
     try {
-      await setDoc(doc(this.db, 'siteSettings', 'global'), settings);
+      await this.db.collection('siteSettings').doc('global').set(settings);
     } catch (err) {
       console.error('Failed to save site settings to Firestore:', err);
     }

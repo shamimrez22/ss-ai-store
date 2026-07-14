@@ -543,7 +543,10 @@ const HomeView: React.FC<{ onQuickView: (p: Product) => void }> = ({ onQuickView
       setProducts(prodData);
       setCategories(featuredCats);
       setLoading(false);
-    }).catch(e => console.error(e));
+    }).catch(e => {
+      console.error(e);
+      setLoading(false);
+    });
 
     return () => clearInterval(countdown);
   }, []);
